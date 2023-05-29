@@ -60,3 +60,24 @@ if uploaded_file_xls is not None:
         for i in range(len(st.session_state.responses)-1, -1, -1):
             message(st.session_state.responses[i], key=str(i), seed='Milo')
             message(st.session_state.prompts[i], is_user=True, key=str(i) + '_user', seed=83)
+uploaded_file_csv = st.file_uploader("Choose a CSV file",type='csv')#st.file_uploader("Choose a csv file", type='csv')######
+
+if uploaded_file_csv is not None:
+
+    csv_data = uploaded_file_csv.read()
+    with open(uploaded_file_csv.name, 'wb') as f: 
+        f.write(csv_data)
+
+    df = pd.read_excel(uploaded_file_csv.name)#pd.read_csv(uploaded_file.name)#######
+    st.dataframe(df.head(10))
+
+    chat = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0)
+    agent = create_pandas_dataframe_agent(chat, df, verbose=True)
+
+    st.text_input("Ask Something:", key="user")
+    st.button("Send", on_click=send_click)
+
+    if st.session_state.prompts:
+        for i in range(len(st.session_state.responses)-1, -1, -1):
+            message(st.session_state.responses[i], key=str(i), seed='Milo')
+            message(st.session_state.prompts[i], is_user=True, key=str(i) + '_user', seed=83)
