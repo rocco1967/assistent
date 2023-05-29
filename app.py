@@ -74,7 +74,7 @@ if uploaded_file_csv is not None:
     chat = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0)
     agent = create_pandas_dataframe_agent(chat, df, verbose=True)
 
-    st.text_input("Ask Something:", key="user")
+    st.text_input("Ask Something(chiedimi qualcosa su' questi dati):", key="user")
     st.button("Send", on_click=send_click)
 
     if st.session_state.prompts:
