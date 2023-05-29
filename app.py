@@ -10,6 +10,7 @@ import streamlit as st
 import langchain
 from streamlit_chat import message
 from langchain.llms import create_pandas_dataframe_agent
+from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 openai.api_key=st.secrets['OPEN_APY_KEY']
 if 'prompts' not in st.session_state:
