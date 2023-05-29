@@ -11,7 +11,7 @@ import langchain
 import openai
 import os
 from streamlit_chat import message
-os.environ["OPENAI_API_KEY"] = '{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}'
+os.environ["OPENAI_API_KEY"] = '{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}'
 #from langchain.llms import create_pandas_dataframe_agent
 from langchain.llms import OpenAI
 from langchain.agents import create_pandas_dataframe_agent
