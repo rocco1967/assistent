@@ -36,7 +36,7 @@ def send_click():
 
 
 st.title(':blue[chat-advisor]☕')#(':blue[ambrogio\'s Data Analysis Chatbot] ☕')
-uploaded_file = st.file_uploader("Choose a csv file", type='csv')
+uploaded_file = st.file_uploader("Choose a XLS file",type='xls')#st.file_uploader("Choose a csv file", type='csv')######
 
 if uploaded_file is not None:
 
@@ -44,7 +44,7 @@ if uploaded_file is not None:
     with open(uploaded_file.name, 'wb') as f: 
         f.write(csv_data)
 
-    df = pd.read_csv(uploaded_file.name)
+    df = pd.read_excel(uploaded_file.name)#pd.read_csv(uploaded_file.name)#######
     st.dataframe(df.head(10))
 
     chat = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0)
