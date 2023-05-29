@@ -43,8 +43,8 @@ uploaded_file_xls = st.file_uploader("Choose a XLS file",type='xls')#st.file_upl
 
 if uploaded_file_xls is not None:
 
-    xls_data = uploaded_file.read()
-    with open(uploaded_file.name, 'wb') as f: 
+    xls_data = uploaded_file_xls.read()
+    with open(uploaded_file_xls.name, 'wb') as f: 
         f.write(xls_data)
 
     df = pd.read_excel(uploaded_file_xls.name)#pd.read_csv(uploaded_file.name)#######
