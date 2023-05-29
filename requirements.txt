@@ -3,3 +3,4 @@ streamlit_chat
 openai
 pandas
 langchain
+tabulate
