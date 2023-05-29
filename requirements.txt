@@ -1,6 +1,6 @@
 streamlit
 streamlit_chat
-openai==0.26
+openai
 pandas
 langchain
 tabulate
