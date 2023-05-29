@@ -68,7 +68,7 @@ if uploaded_file_csv is not None:
     with open(uploaded_file_csv.name, 'wb') as f: 
         f.write(csv_data)
 
-    df = pd.read_excel(uploaded_file_csv.name)#pd.read_csv(uploaded_file.name)#######
+    df = pd.read_csv(uploaded_file_csv.name)#pd.read_csv(uploaded_file.name)#######
     st.dataframe(df.head(10))
 
     chat = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0)
