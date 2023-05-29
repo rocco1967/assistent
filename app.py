@@ -39,15 +39,15 @@ st.title(':blue[chat-advisor]â˜•')#(':blue[ambrogio\'s Data Analysis Chatbot] â˜
 selectbox = st.selectbox(
     "How would you like to see ?",
     ("file_csv", "file_xls"))
-uploaded_file = st.file_uploader("Choose a XLS file",type='xls')#st.file_uploader("Choose a csv file", type='csv')######
+uploaded_file_xls = st.file_uploader("Choose a XLS file",type='xls')#st.file_uploader("Choose a csv file", type='csv')######
 
-if uploaded_file is not None:
+if uploaded_file_xls is not None:
 
-    csv_data = uploaded_file.read()
+    xls_data = uploaded_file.read()
     with open(uploaded_file.name, 'wb') as f: 
-        f.write(csv_data)
+        f.write(xls_data)
 
-    df = pd.read_excel(uploaded_file.name)#pd.read_csv(uploaded_file.name)#######
+    df = pd.read_excel(uploaded_file_xls.name)#pd.read_csv(uploaded_file.name)#######
     st.dataframe(df.head(10))
 
     chat = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0)
