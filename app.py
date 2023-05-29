@@ -9,6 +9,7 @@ import pandas as pd
 import streamlit as st
 import langchain
 import openai
+import xlrd
 import os
 from streamlit_chat import message
 openai.api_key=st.secrets['OPENAI_API_KEY']
