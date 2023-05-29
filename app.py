@@ -36,9 +36,9 @@ def send_click():
 
 
 st.title(':blue[chat-advisor]☕')#(':blue[ambrogio\'s Data Analysis Chatbot] ☕')
-selectbox = st.selectbox(
-    "How would you like to see ?",
-    ("file_csv", "file_xls"))
+#selectbox = st.selectbox(
+    #"How would you like to see ?",
+    #("file_csv", "file_xls"))
 uploaded_file_xls = st.file_uploader("Choose a XLS file",type='xls')#st.file_uploader("Choose a csv file", type='csv')######
 
 if uploaded_file_xls is not None:
