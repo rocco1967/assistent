@@ -34,7 +34,7 @@ def send_click():
         st.session_state.responses.append(response)
 
 
-st.title(':blue[ambrogio\'s Data Analysis Chatbot] ☕')
+st.title('chat-advisor]☕')#(':blue[ambrogio\'s Data Analysis Chatbot] ☕')
 uploaded_file = st.file_uploader("Choose a csv file", type='csv')
 
 if uploaded_file is not None:
