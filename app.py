@@ -41,7 +41,7 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file.name)
     st.dataframe(df.head(5))
 
-    chat = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0)
+    chat = ChatOpenAI(model_name='text-davinci-003', temperature=0)
     agent = create_pandas_dataframe_agent(chat, df, verbose=True)
 
     st.text_input("Ask Something:", key="user")
