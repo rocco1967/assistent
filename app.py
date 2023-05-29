@@ -7,6 +7,7 @@ Created on Mon May 29 10:34:00 2023
 
 import pandas as pd
 import streamlit as st
+import langchain
 from streamlit_chat import message
 from langchain.llms import create_pandas_dataframe_agent
 from langchain.chat_models import ChatOpenAI
