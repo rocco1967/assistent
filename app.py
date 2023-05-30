@@ -32,7 +32,7 @@ def send_click():
         response = agent.run(prompt)
 
         st.session_state.prompts.append(prompt)
-        #st.session_state.responses.append(response)
+        st.session_state.responses.append(response)
 
 
 st.title(':blue[chat-advisor]☕')#(':blue[ambrogio\'s Data Analysis Chatbot] ☕')
